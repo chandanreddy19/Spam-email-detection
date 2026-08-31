@@ -1,7 +1,3 @@
-Yes. Based on the project details you provided and the **correct team information**, here is a complete, professional `README.md` you can use as the base for your GitHub repository.
-
-I have **not invented dataset statistics, API endpoints, hyperparameters, or model metrics** that you haven't provided. Those should be filled with the actual values from your implementation.
-
 # 🛡️ Spam & Phishing Email Detection System
 
 ### AI-Powered Email Security Using NLP, Machine Learning, Mathematical Optimization & Generative AI
@@ -15,362 +11,160 @@ I have **not invented dataset statistics, API endpoints, hyperparameters, or mod
 
 ---
 
-## 📌 Table of Contents
+## 📌 Overview
 
-* [Overview](#-overview)
-* [Problem Statement](#-problem-statement)
-* [Objectives](#-objectives)
-* [Key Features](#-key-features)
-* [How the System Works](#-how-the-system-works)
-* [System Architecture](#-system-architecture)
-* [NLP Pipeline](#-nlp-pipeline)
-* [Feature Engineering](#-feature-engineering)
-* [Machine Learning](#-machine-learning)
-* [Mathematical Optimization](#-mathematical-optimization)
-* [Model Comparison](#-model-comparison)
-* [Risk Scoring](#-risk-scoring)
-* [Gemini AI Explanation](#-gemini-ai-explanation)
-* [Frontend Dashboard](#-frontend-dashboard)
-* [Technology Stack](#-technology-stack)
-* [Project Structure](#-project-structure)
-* [Dataset](#-dataset)
-* [Installation](#-installation)
-* [Environment Variables](#-environment-variables)
-* [Running the Project](#-running-the-project)
-* [Example](#-example)
-* [Model Evaluation](#-model-evaluation)
-* [Security & Privacy](#-security--privacy)
-* [Limitations](#-limitations)
-* [Future Enhancements](#-future-enhancements)
-* [Team](#-team)
-* [Learning Outcomes](#-learning-outcomes)
-* [License](#-license)
-* [Disclaimer](#-disclaimer)
+Spam and phishing emails are continuously evolving, making traditional rule-based filtering increasingly ineffective. Attackers frequently change wording, disguise malicious links, manipulate formatting, and use social-engineering techniques to deceive users.
 
----
+This project develops an **intelligent Spam and Phishing Email Detection System** that combines Natural Language Processing, Machine Learning, mathematical optimization, metadata analysis, and Generative AI.
 
-# 📖 Overview
+The system analyzes email content and metadata, extracts meaningful features, calculates a risk probability, and classifies emails into security categories.
 
-Spam and phishing emails are among the most common forms of digital threats. Attackers continuously change their language, email structure, links, and social-engineering techniques to bypass traditional rule-based filters.
-
-A simple rule such as:
+### Core Pipeline
 
 ```text
-IF email contains "lottery"
-THEN mark as spam
+Incoming Email
+      ↓
+NLP Preprocessing
+      ↓
+TF-IDF + Metadata Features
+      ↓
+Machine Learning Model
+      ↓
+Probability / Risk Score
+      ↓
+Spam / Phishing / Safe
+      ↓
+Gemini AI Explanation
 ```
-
-is not sufficient because attackers can easily change the wording:
-
-```text
-"Congratulations! You have received a free reward."
-```
-
-or hide malicious content behind suspicious links and deceptive language.
-
-To address this problem, this project develops an **intelligent Spam and Phishing Email Detection System** that combines:
-
-```text
-Natural Language Processing
-        +
-TF-IDF Feature Engineering
-        +
-Metadata Analysis
-        +
-Machine Learning
-        +
-Mathematical Optimization
-        +
-Generative AI
-```
-
-The system analyzes an email, extracts meaningful textual and metadata features, predicts the likelihood of malicious activity, and classifies the email as:
-
-* 🟢 **Safe (Ham)**
-* 🟠 **Spam**
-* 🔴 **Phishing**
-
-The system also integrates **Google Gemini AI** to explain the prediction in simple, understandable language.
-
----
-
-# 🚨 Problem Statement
-
-Traditional email filtering systems frequently depend on predefined rules and manually maintained blacklists.
-
-These approaches can struggle with modern phishing attacks because attackers can:
-
-* Change suspicious keywords.
-* Modify sentence structures.
-* Use social engineering.
-* Hide malicious URLs.
-* Manipulate capitalization and punctuation.
-* Use urgent or threatening language.
-* Create fake account-verification requests.
-* Continuously generate new variations of phishing emails.
-
-Therefore, an intelligent system is required that can **learn patterns from existing email data and generalize those patterns to previously unseen emails**.
-
-This project addresses the problem using NLP, statistical feature extraction, machine learning, and explainable generative AI.
 
 ---
 
 # 🎯 Objectives
 
-The main objectives of the project are:
-
-1. Automatically detect spam and phishing emails.
-2. Process unstructured email text using NLP.
-3. Remove irrelevant information from raw email content.
-4. Extract meaningful features using TF-IDF.
-5. Analyze email metadata and structural indicators.
-6. Train a machine-learning classification model.
-7. Optimize the classification objective using mathematical optimization.
-8. Reduce overfitting through regularization.
-9. Generate a probability-based risk score.
-10. Provide understandable explanations for predictions.
-11. Build an interactive web-based email scanning dashboard.
-12. Compare multiple machine-learning algorithms.
+* Automatically detect spam and phishing emails.
+* Process unstructured email text using NLP.
+* Extract meaningful features using TF-IDF.
+* Analyze suspicious email metadata.
+* Apply machine-learning classification.
+* Optimize model training using mathematical optimization.
+* Reduce overfitting using regularization.
+* Generate probability-based risk scores.
+* Explain predictions using Generative AI.
+* Provide an interactive email-security dashboard.
+* Compare multiple machine-learning algorithms.
 
 ---
 
 # 🚀 Key Features
 
-### 📧 Email Analysis
-
-Analyzes:
-
-* Email subject
-* Email body
-* Text patterns
-* URLs
-* Formatting characteristics
-* Metadata signals
-
-### 🧹 NLP Preprocessing
-
-Includes:
-
-* HTML removal
-* Regex-based cleaning
-* Tokenization
-* Stopword removal
-* Stemming
-* Text normalization
-
-### 📊 TF-IDF
-
-Converts email text into numerical feature vectors suitable for machine-learning algorithms.
-
-### 🔍 Metadata Analysis
-
-Analyzes indicators such as:
-
-* URL presence
-* Suspicious external links
-* Uppercase frequency
-* Excessive punctuation
-* Special characters
-* Email length
-* Urgency indicators
-* Suspicious phrases
-
-### 🤖 Machine Learning
-
-Primary classifier:
-
-**Logistic Regression**
-
-Comparative algorithms:
-
-* Naive Bayes
-* Linear SVM
-* Decision Tree
-
-### ⚙️ Optimization
-
-Uses concepts including:
-
-* Binary Cross-Entropy
-* Log-Loss
-* Gradient Descent
-* SGD
-* L-BFGS
-* L2 Regularization
-
-### 📈 Risk Score
-
-Produces a probability-based risk assessment for the analyzed email.
-
-### 🧠 Gemini AI
-
-Provides contextual explanations describing why an email may be suspicious.
-
-### 💻 Interactive Dashboard
-
-Provides a web interface for:
-
-* Email scanning
-* Classification results
-* Risk visualization
-* Threat explanations
-* Model metrics
-* Audit information
-
----
-
-# 🔄 How the System Works
-
-The complete workflow is:
-
-```text
-                Incoming Email
-                      │
-                      ▼
-             ┌─────────────────┐
-             │ Email Extraction│
-             └────────┬────────┘
-                      │
-                      ▼
-             ┌─────────────────┐
-             │ NLP Preprocessing│
-             ├─────────────────┤
-             │ HTML Removal    │
-             │ Regex Cleaning  │
-             │ Tokenization    │
-             │ Stopwords       │
-             │ Stemming        │
-             └────────┬────────┘
-                      │
-                      ▼
-             ┌─────────────────┐
-             │ Feature         │
-             │ Extraction      │
-             ├─────────────────┤
-             │ TF-IDF          │
-             │ URL Features    │
-             │ Metadata        │
-             │ Text Signals    │
-             └────────┬────────┘
-                      │
-                      ▼
-             ┌─────────────────┐
-             │ Machine Learning│
-             │ Logistic        │
-             │ Regression      │
-             └────────┬────────┘
-                      │
-                      ▼
-             ┌─────────────────┐
-             │ Probability /   │
-             │ Risk Score      │
-             └────────┬────────┘
-                      │
-              ┌───────┴────────┐
-              ▼                ▼
-        Classification     Gemini AI
-              │             Explanation
-              │                │
-              └───────┬────────┘
-                      ▼
-             ┌─────────────────┐
-             │ Web Dashboard   │
-             └─────────────────┘
-```
+* 📧 **Email Content Analysis**
+* 🧹 **NLP Preprocessing**
+* 📊 **TF-IDF Feature Extraction**
+* 🔍 **Metadata & Heuristic Analysis**
+* 🤖 **Logistic Regression Classification**
+* 📈 **Probability-Based Risk Scoring**
+* ⚙️ **Binary Cross-Entropy / Log-Loss Optimization**
+* 📐 **L-BFGS / SGD Optimization**
+* 🛡️ **L2 Regularization**
+* 🧠 **Gemini AI Threat Explanation**
+* 📉 **Model Performance Evaluation**
+* 💻 **React + TypeScript Dashboard**
 
 ---
 
 # 🏗️ System Architecture
 
-The system can be divided into four major layers.
-
-### 1. Data Processing Layer
-
-Responsible for:
-
-* Loading datasets.
-* Cleaning email content.
-* Removing unnecessary information.
-* Preparing training data.
-
-### 2. Machine Learning Layer
-
-Responsible for:
-
-* Feature extraction.
-* Model training.
-* Optimization.
-* Prediction.
-* Probability calculation.
-* Model evaluation.
-
-### 3. AI Explanation Layer
-
-Responsible for:
-
-* Receiving prediction information.
-* Identifying relevant threat indicators.
-* Generating human-readable explanations using Gemini.
-
-### 4. Presentation Layer
-
-Responsible for:
-
-* Email input.
-* Prediction display.
-* Risk visualization.
-* Explanation display.
-* Model metrics.
+```text
+                    ┌─────────────────────┐
+                    │    Incoming Email   │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │  NLP Preprocessing  │
+                    │                     │
+                    │ • HTML Removal      │
+                    │ • Regex Cleaning    │
+                    │ • Tokenization      │
+                    │ • Stopword Removal  │
+                    │ • Stemming          │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Feature Extraction  │
+                    │                     │
+                    │ • TF-IDF            │
+                    │ • URL Features      │
+                    │ • Metadata Signals  │
+                    │ • Text Statistics   │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Machine Learning    │
+                    │                     │
+                    │ Logistic Regression │
+                    │ + Optimization      │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ Probability / Risk  │
+                    │ Score               │
+                    └──────────┬──────────┘
+                               │
+                      ┌────────┴────────┐
+                      ▼                 ▼
+                Classification     Gemini AI
+                      │             Explanation
+                      │                 │
+                      └────────┬────────┘
+                               ▼
+                    ┌─────────────────────┐
+                    │   Security          │
+                    │   Dashboard         │
+                    └─────────────────────┘
+```
 
 ---
 
-# 🧹 NLP Pipeline
+# 🔄 How the System Works
 
-Raw emails contain HTML, formatting characters, symbols, and other noise.
+## 1. Email Input
 
-The NLP pipeline converts this unstructured content into normalized text.
+The system receives email information including:
 
-## Step 1 — HTML Removal
+* Sender
+* Subject
+* Email body
+* URLs
+* HTML content
+* Formatting information
+* Available metadata
+
+---
+
+## 2. NLP Preprocessing
+
+The raw email is cleaned before feature extraction.
+
+### HTML Removal
+
+Removes unnecessary HTML tags and formatting.
+
+### Regex Cleaning
+
+Removes unwanted characters and irrelevant patterns.
+
+### Tokenization
+
+Converts text into individual tokens.
 
 Example:
 
-```html
-<div>
-    <h1>URGENT ACCOUNT ALERT</h1>
-</div>
-```
-
-is converted into meaningful text such as:
-
 ```text
-URGENT ACCOUNT ALERT
-```
-
----
-
-## Step 2 — Regex Cleaning
-
-Regular expressions are used to identify and clean unwanted patterns.
-
-Examples include:
-
-```text
-Special characters
-Unnecessary whitespace
-HTML fragments
-Irrelevant symbols
-```
-
----
-
-## Step 3 — Tokenization
-
-The text is divided into individual tokens.
-
-Example:
-
-```text
-"Verify your account immediately"
+Verify your account immediately
 ```
 
 becomes:
@@ -379,13 +173,9 @@ becomes:
 ["Verify", "your", "account", "immediately"]
 ```
 
----
+### Stopword Removal
 
-## Step 4 — Stopword Removal
-
-Common words that contribute little information can be removed.
-
-Example:
+Common words such as:
 
 ```text
 the
@@ -397,13 +187,11 @@ of
 to
 ```
 
----
+can be removed.
 
-## Step 5 — Stemming
+### Stemming
 
-Words are reduced toward their common root form.
-
-Example:
+Related words are reduced toward common roots.
 
 ```text
 bank
@@ -412,39 +200,33 @@ banking
 banker
 ```
 
-can be reduced toward a common stem.
-
-This reduces vocabulary size and helps the model recognize related terms.
-
 ---
 
 # 📊 Feature Engineering
 
-The system combines **textual features** and **metadata/heuristic features**.
-
 ## TF-IDF
 
-TF-IDF stands for:
-
-**Term Frequency–Inverse Document Frequency**
-
-It measures how important a word is within an email relative to the complete dataset.
-
-Conceptually:
+TF-IDF converts email text into numerical feature vectors.
 
 ```text
-TF-IDF = Term Frequency × Inverse Document Frequency
+TF-IDF
+   ↓
+Text
+   ↓
+Numerical Feature Matrix
+   ↓
+Machine Learning Model
 ```
 
-TF-IDF helps identify words that are particularly informative for classification.
+The model learns statistical relationships between textual features and email classes.
 
-Potentially useful terms include:
+Potentially informative examples include:
 
 ```text
 urgent
 verify
-password
 account
+password
 login
 security
 locked
@@ -453,82 +235,49 @@ transfer
 click
 ```
 
-The model learns the importance of these features from the training data rather than relying only on manually defined rules.
-
 ---
 
-# 🔍 Metadata Features
+# 🔍 Metadata Analysis
 
-Text alone may not be sufficient.
+The system can analyze additional email-level indicators.
 
-The system can also consider structural characteristics such as:
-
-| Feature               | Purpose                              |
-| --------------------- | ------------------------------------ |
-| URL count             | Detect link-heavy messages           |
-| Suspicious URL        | Identify potentially malicious links |
-| Uppercase ratio       | Detect aggressive formatting         |
-| Punctuation count     | Detect unusual formatting            |
-| Exclamation count     | Identify urgency/emphasis            |
-| Email length          | Identify unusual message structures  |
-| Digit count           | Detect suspicious numerical patterns |
-| Urgency indicators    | Identify social-engineering language |
-| Verification language | Detect credential-related requests   |
-
-These features can be combined with TF-IDF features before classification.
+| Feature               | Purpose                           |
+| --------------------- | --------------------------------- |
+| URL Count             | Detect link-heavy messages        |
+| Suspicious URL        | Identify potentially unsafe links |
+| Uppercase Ratio       | Detect unusual formatting         |
+| Punctuation Count     | Identify aggressive formatting    |
+| Exclamation Count     | Detect urgency                    |
+| Email Length          | Identify unusual structures       |
+| Digit Count           | Detect numerical patterns         |
+| Urgency Indicators    | Identify social engineering       |
+| Verification Language | Detect account-related requests   |
 
 ---
 
 # 🤖 Machine Learning
 
-## Primary Model — Logistic Regression
+## Logistic Regression
 
-Logistic Regression is used as the primary classifier.
+Logistic Regression is the primary classification model.
 
-It is particularly suitable for text classification because:
+It is suitable for this project because:
 
-* TF-IDF produces high-dimensional sparse vectors.
-* Logistic Regression handles sparse features efficiently.
-* Inference is fast.
-* Model weights are interpretable.
+* It works efficiently with high-dimensional TF-IDF features.
+* It is computationally efficient.
 * It produces probability estimates.
-* It is computationally less expensive than many deep-learning approaches.
-
----
-
-## Sigmoid Function
-
-Logistic Regression uses the sigmoid function:
-
-```text
-σ(z) = 1 / (1 + e⁻ᶻ)
-```
-
-where:
-
-```text
-z = wᵀx + b
-```
-
-The sigmoid maps the model output to a probability between:
-
-```text
-0 and 1
-```
-
-This probability can then be used for classification.
+* Its feature weights can be interpreted.
+* It provides fast inference.
 
 ---
 
 # 🧮 Mathematical Optimization
 
-Optimization is an important component of the project.
+The classification model is trained by minimizing a loss function.
 
-The objective is to find model parameters that minimize classification error.
+## Binary Cross-Entropy
 
-## Binary Cross-Entropy / Log-Loss
-
-For a binary classification problem:
+For binary classification:
 
 ```text
 L = -[y log(p) + (1-y) log(1-p)]
@@ -539,15 +288,15 @@ where:
 * `y` = actual label
 * `p` = predicted probability
 
-The training process attempts to minimize this loss.
+The objective is to minimize the average loss over the training dataset.
 
 ---
 
 # ⚙️ L2 Regularization
 
-Regularization helps prevent overfitting.
+L2 regularization helps reduce overfitting.
 
-The objective can conceptually be represented as:
+Conceptually:
 
 ```text
 Total Objective
@@ -559,162 +308,117 @@ Log-Loss
 
 where:
 
-* `λ` controls the regularization strength.
+* `λ` controls regularization strength.
 * `w` represents model weights.
 
-L2 regularization discourages excessively large weights and improves generalization.
+This discourages excessively large model weights.
 
 ---
 
 # 📐 Optimization Methods
 
-The project explores optimization approaches such as:
+The project explores:
+
+* Gradient Descent
+* Stochastic Gradient Descent
+* L-BFGS
+* L2 Regularization
 
 ### Gradient Descent
 
-Iteratively updates model parameters in the direction that reduces the loss.
+Updates parameters iteratively in the direction that minimizes the loss.
 
-### Stochastic Gradient Descent
+### SGD
 
-Uses individual or small batches of training samples to update model parameters.
+Uses individual or small batches of samples for iterative optimization.
 
 ### L-BFGS
 
-L-BFGS is a quasi-Newton optimization method that approximates second-order information while using less memory than a full Hessian.
-
-It can provide efficient convergence for suitable logistic-regression optimization problems.
+Uses an approximation of second-order optimization information to efficiently converge toward a minimum.
 
 ---
 
-# 🧪 Comparative Machine Learning Models
+# 🧪 Model Comparison
 
-The project can compare the primary Logistic Regression model against other algorithms.
+Multiple algorithms can be evaluated against the primary Logistic Regression model.
 
-| Model               | Role                            |
-| ------------------- | ------------------------------- |
-| Logistic Regression | Primary model                   |
-| Naive Bayes         | Probabilistic baseline          |
-| Linear SVM          | Linear classification benchmark |
-| Decision Tree       | Non-linear comparison           |
+| Model                   |  Accuracy | Precision |    Recall |  F1-Score |
+| ----------------------- | --------: | --------: | --------: | --------: |
+| **Logistic Regression** | **98.4%** | **98.2%** | **98.5%** | **98.3%** |
+| Naive Bayes             |     96.8% |     96.5% |     97.1% |     96.8% |
+| Linear SVM              |     97.9% |     97.7% |     98.0% |     97.8% |
+| Decision Tree           |     94.6% |     94.1% |     94.9% |     94.5% |
 
-The models should be evaluated using the same dataset and evaluation methodology.
+> ⚠️ **Important:** The values above are **illustrative placeholders**, not verified experimental results. Replace them with the actual metrics generated by your trained models before using the README for academic submission or professional claims.
 
 ---
 
 # 📈 Model Evaluation
 
-The project evaluates classification performance using:
+The system evaluates models using:
 
-### Accuracy
-
-```text
-Accuracy = Correct Predictions / Total Predictions
-```
-
-### Precision
-
-```text
-Precision = TP / (TP + FP)
-```
-
-### Recall
-
-```text
-Recall = TP / (TP + FN)
-```
-
-### F1-Score
-
-```text
-F1 = 2 × Precision × Recall
-     -------------------------
-       Precision + Recall
-```
-
-### Additional Evaluation
-
+* Accuracy
+* Precision
+* Recall
+* F1-Score
 * Confusion Matrix
 * ROC Curve
 * ROC-AUC
 * False Positive Rate
 * False Negative Rate
 
----
-
-# 📊 Model Performance
-
-The project has achieved an experimental accuracy of approximately:
-
-## **98.4%**
-
-on the selected evaluation dataset.
-
-However, accuracy alone should not be used to judge the effectiveness of an email-security classifier.
-
-The final evaluation should include:
+### Accuracy
 
 ```text
-Accuracy
-Precision
-Recall
-F1-Score
-ROC-AUC
-False Positives
-False Negatives
+Accuracy =
+Correct Predictions / Total Predictions
 ```
 
-### Model Comparison
+### Precision
 
-> Replace the following placeholders with the actual results generated by your experiments.
+```text
+Precision =
+TP / (TP + FP)
+```
 
-| Model               | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
-| ------------------- | -------: | --------: | -----: | -------: | ------: |
-| Logistic Regression |        — |         — |      — |        — |       — |
-| Naive Bayes         |        — |         — |      — |        — |       — |
-| Linear SVM          |        — |         — |      — |        — |       — |
-| Decision Tree       |        — |         — |      — |        — |       — |
+### Recall
+
+```text
+Recall =
+TP / (TP + FN)
+```
+
+### F1-Score
+
+```text
+F1 =
+2 × Precision × Recall
+----------------------
+Precision + Recall
+```
 
 ---
 
 # 🎯 Risk Scoring
 
-The system generates a risk probability based on the model prediction.
-
-A conceptual flow is:
-
-```text
-Email
- ↓
-Feature Extraction
- ↓
-ML Probability
- ↓
-Risk Assessment
- ↓
-Classification
-```
+The classifier produces a probability that can be converted into a risk assessment.
 
 Example:
 
 ```text
-Risk Score: 94%
-
-Classification: PHISHING
+Classification : PHISHING
+Risk Score      : 94%
 ```
 
-The exact risk-score formula and classification threshold should be documented according to the actual implementation.
+The exact threshold and risk-score calculation should correspond to the implementation used by the project.
 
 ---
 
 # 🧠 Gemini AI Explanation Layer
 
-Machine-learning predictions can be difficult for ordinary users to interpret.
+The project integrates Google Gemini as an explanation layer.
 
-Therefore, the system uses **Google Gemini API** as an explanation layer.
-
-The ML system first identifies the prediction and relevant indicators.
-
-These results are then passed to the AI explanation component.
+The ML model performs the actual classification, while Gemini converts the technical prediction and identified indicators into an understandable explanation.
 
 ```text
 ML Prediction
@@ -726,8 +430,6 @@ Threat Indicators
 Gemini AI
       ↓
 Plain-English Explanation
-      ↓
-User
 ```
 
 ### Example
@@ -737,57 +439,45 @@ Classification: PHISHING
 
 Risk Score: 96%
 
-Why was this email flagged?
+Possible Reasons:
 
 • The email uses urgent language.
 • It asks the recipient to verify an account.
 • It contains an external link.
-• It attempts to create pressure for immediate action.
+• The message creates pressure for immediate action.
 • The wording resembles common phishing patterns.
 ```
-
-The Gemini layer is intended to improve **explainability and user awareness** rather than replace the trained ML classifier.
 
 ---
 
 # 💻 Frontend Dashboard
 
-The application includes a modern web-based dashboard.
-
-### Frontend Technologies
+The frontend is developed using:
 
 * React 18
 * TypeScript
 * Tailwind CSS
 * Lucide Icons
 
-### Dashboard Components
+The dashboard is designed to display:
 
-The interface can display:
-
-* Email scanner
-* Classification result
+* Email input
+* Classification
 * Risk score
 * Threat indicators
 * Suspicious phrases
-* AI explanation
-* Confusion matrix
-* ROC curve
+* AI-generated explanation
 * Model metrics
+* Evaluation results
 * Audit information
 
 ---
 
 # 🛠️ Technology Stack
 
-## Programming
-
-* Python
-* TypeScript
-* JavaScript
-
 ## Machine Learning
 
+* Python
 * Scikit-learn
 * Pandas
 * NumPy
@@ -801,7 +491,7 @@ The interface can display:
 * Porter Stemmer
 * TF-IDF
 
-## Machine Learning Algorithms
+## Algorithms
 
 * Logistic Regression
 * Naive Bayes
@@ -830,11 +520,37 @@ The interface can display:
 
 ---
 
+# 📚 Dataset
+
+The project uses a labeled email dataset for supervised learning.
+
+The final repository should document:
+
+* Dataset name
+* Dataset source
+* Number of samples
+* Class distribution
+* Data cleaning
+* Duplicate removal
+* Train/test split
+* Validation methodology
+
+### Dataset Information
+
+```text
+Dataset Name : [ADD ACTUAL DATASET]
+Source       : [ADD SOURCE]
+Total Samples: [ADD NUMBER]
+Ham          : [ADD NUMBER]
+Spam         : [ADD NUMBER]
+Phishing     : [ADD NUMBER IF APPLICABLE]
+Train Split  : [ADD VALUE]
+Test Split   : [ADD VALUE]
+```
+
+---
+
 # 📁 Project Structure
-
-The final structure should reflect the actual repository.
-
-A recommended structure is:
 
 ```text
 Spam-Phishing-Detection/
@@ -854,8 +570,7 @@ Spam-Phishing-Detection/
 │   │   ├── pages/
 │   │   ├── services/
 │   │   └── App.tsx
-│   ├── package.json
-│   └── ...
+│   └── package.json
 │
 ├── notebooks/
 │   ├── data_analysis.ipynb
@@ -864,7 +579,6 @@ Spam-Phishing-Detection/
 │   └── model_evaluation.ipynb
 │
 ├── tests/
-│
 ├── requirements.txt
 ├── .env.example
 ├── .gitignore
@@ -872,409 +586,115 @@ Spam-Phishing-Detection/
 └── README.md
 ```
 
----
-
-# 📚 Dataset
-
-The system requires a labeled email dataset for supervised machine learning.
-
-The dataset section should document:
-
-* Dataset name
-* Dataset source
-* Dataset URL
-* Total number of emails
-* Number of Ham emails
-* Number of Spam emails
-* Number of Phishing emails, if applicable
-* Class distribution
-* Missing values
-* Duplicate records
-* Train/test split
-* Preprocessing performed
-
-### Dataset Information
-
-```text
-Dataset Name: [ADD ACTUAL DATASET NAME]
-
-Source: [ADD SOURCE]
-
-Total Samples: [ADD NUMBER]
-
-Ham: [ADD NUMBER]
-
-Spam: [ADD NUMBER]
-
-Phishing: [ADD NUMBER IF APPLICABLE]
-
-Train Split: [ADD %]
-
-Validation Split: [ADD %]
-
-Test Split: [ADD %]
-```
-
-> **Important:** Replace these placeholders with the actual dataset information. Do not claim separate phishing classification unless your dataset and model actually support it.
-
----
-
-# 🔧 Installation
-
-## Prerequisites
-
-Install:
-
-* Python 3.x
-* Node.js
-* npm
-* Git
-
----
-
-## 1. Clone Repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-cd YOUR_REPOSITORY
-```
-
----
-
-## 2. Create Python Virtual Environment
-
-### Windows
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-### Linux / macOS
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
----
-
-## 3. Install Backend Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 4. Install Frontend Dependencies
-
-```bash
-cd frontend
-npm install
-```
+> Update this structure so that it exactly matches the actual repository.
 
 ---
 
 # 🔐 Environment Variables
 
-Create a `.env` file in the appropriate backend location.
-
-Example:
+If Gemini API integration is enabled, configure the API key through an environment variable.
 
 ```env
 GEMINI_API_KEY=your_api_key_here
 ```
 
-If the project uses additional environment variables, document them here.
+Never commit API keys or other secrets to the repository.
 
-### Security
-
-Never commit:
+Recommended `.gitignore` entries:
 
 ```text
 .env
-API keys
-Passwords
-Access tokens
-Private credentials
-```
-
-Add `.env` to `.gitignore`.
-
----
-
-# ▶️ Running the Project
-
-## Start Backend
-
-Use the command corresponding to your actual backend implementation.
-
-Example:
-
-```bash
-python app.py
-```
-
-or:
-
-```bash
-uvicorn app:app --reload
+venv/
+__pycache__/
+*.pyc
+node_modules/
 ```
 
 ---
 
-## Start Frontend
+# 🔒 Security & Privacy
 
-```bash
-cd frontend
-npm run dev
-```
-
-The frontend will start on the local development URL provided by the development server.
-
-> Update these commands to match the actual implementation.
-
----
-
-# 🧪 Example
-
-### Input Email
-
-```text
-Subject:
-URGENT! Your Account Has Been Locked
-
-Your account has been temporarily suspended.
-
-Please verify your account immediately by clicking the link below:
-
-http://example-suspicious-site.com/verify
-```
-
-### Example Output
-
-```text
-Classification:
-PHISHING
-
-Risk Score:
-96%
-
-Threat Indicators:
-
-✓ Urgent language
-✓ Account-lock claim
-✓ Verification request
-✓ External URL
-✓ Suspicious wording
-
-AI Explanation:
-
-This email may be attempting to create urgency and
-convince the recipient to click a potentially unsafe
-link and provide account information.
-```
-
----
-
-# 🔌 API Documentation
-
-If the project exposes a backend API, document the actual endpoints here.
-
-Example structure:
-
-```text
-POST /predict
-```
-
-### Request
-
-```json
-{
-  "subject": "Urgent account verification",
-  "body": "Please verify your account immediately..."
-}
-```
-
-### Response
-
-```json
-{
-  "classification": "phishing",
-  "risk_score": 0.96,
-  "indicators": [
-    "Urgent language",
-    "Verification request",
-    "Suspicious URL"
-  ]
-}
-```
-
-> Replace these example endpoints and JSON structures with the actual API implemented in the project.
-
----
-
-# 📸 Screenshots
-
-Add screenshots of the actual application here.
-
-Recommended screenshots:
-
-### Dashboard
-
-```text
-![Dashboard](screenshots/dashboard.png)
-```
-
-### Safe Email
-
-```text
-![Safe Email](screenshots/safe-email.png)
-```
-
-### Spam Detection
-
-```text
-![Spam Detection](screenshots/spam-result.png)
-```
-
-### Phishing Detection
-
-```text
-![Phishing Detection](screenshots/phishing-result.png)
-```
-
-### Gemini Explanation
-
-```text
-![AI Explanation](screenshots/gemini-explanation.png)
-```
-
-### Model Analytics
-
-```text
-![Model Analytics](screenshots/model-analytics.png)
-```
-
----
-
-# 🎥 Demo
-
-If a demo video is available, add it here.
-
-```text
-▶️ Live Demo: [ADD DEPLOYMENT LINK]
-
-🎥 Demo Video: [ADD VIDEO LINK]
-```
-
----
-
-# 🔐 Security & Privacy
-
-Because email content may contain sensitive information, security and privacy are important considerations.
+Email content may contain sensitive information, so the system should follow secure data-handling practices.
 
 Recommended practices include:
 
 * Never expose API keys.
-* Avoid unnecessary storage of email content.
-* Sanitize HTML input.
-* Validate external URLs.
-* Protect backend endpoints.
+* Avoid unnecessary email storage.
+* Sanitize HTML content.
+* Validate URLs.
+* Protect backend APIs.
 * Use HTTPS in production.
-* Implement authentication where required.
-* Avoid logging sensitive email information.
+* Avoid logging sensitive email content.
 * Secure communication between frontend and backend.
+* Apply authentication where necessary.
 
 ---
 
 # ⚠️ Limitations
 
-Current limitations may include:
+The system may have limitations including:
 
-* Dataset-dependent performance.
-* Limited generalization to completely new attack patterns.
-* Potential false positives.
-* Potential false negatives.
-* Dependence on the quality and diversity of training data.
-* Traditional ML models may not fully understand complex semantic context.
-* Gemini explanations should not be treated as security proof.
-* Real-world deployment requires additional security validation.
+* Performance depends on the training dataset.
+* New phishing techniques may not match learned patterns.
+* False positives are possible.
+* False negatives are possible.
+* Traditional ML may have limited semantic understanding.
+* External AI explanations may occasionally require verification.
+* Real-world deployment requires extensive security testing.
 
 ---
 
 # 🔮 Future Enhancements
 
-## 📧 Real-Time Email Integration
+### 📧 Real-Time Email Integration
 
-Integrate directly with:
+Integration with Gmail, Outlook, and other email services.
 
-* Gmail
-* Microsoft Outlook
-* Other email providers
+### 🧠 Transformer-Based Models
 
----
-
-## 🧠 Transformer Models
-
-Compare traditional ML with:
+Comparison with:
 
 * BERT
 * RoBERTa
 * DistilBERT
-* Other transformer-based models
 
----
+### 🌍 Multilingual Detection
 
-## 🌍 Multilingual Detection
+Support for phishing emails written in multiple languages.
 
-Extend detection to emails written in multiple languages.
+### 📎 Attachment Analysis
 
----
-
-## 📎 Attachment Analysis
-
-Analyze potentially malicious:
+Detection of potentially malicious:
 
 * PDFs
 * Documents
-* Images
 * Archives
 * Executable files
 
----
+### 🌐 URL Threat Intelligence
 
-## 🌐 URL Threat Intelligence
+Integration with external URL reputation and threat-intelligence services.
 
-Integrate external threat-intelligence and URL reputation services.
+### 👤 Sender Reputation
 
----
-
-## 👤 Sender Reputation
-
-Analyze:
+Analysis of:
 
 * Sender domain
 * Domain reputation
-* Authentication information
+* Authentication signals
 * Sender history
 
----
+### 🔄 Continuous Learning
 
-## 🔄 Continuous Learning
+Retraining the model with newly detected spam and phishing examples.
 
-Allow the system to incorporate newly identified spam and phishing examples into future training cycles.
+### 🔍 Explainable AI
 
----
-
-## 🔍 Explainable AI
-
-Provide visual explanations showing which features contributed most strongly to the prediction.
+Visual explanations showing which features contributed most strongly to each prediction.
 
 ---
 
-# 👥 Team
+# 👥 Project Team
 
 | Role               | Name              |
 | ------------------ | ----------------- |
@@ -1290,32 +710,30 @@ Provide visual explanations showing which features contributed most strongly to 
 ## Chandan Reddy — Team Lead / M1
 
 * Designed the overall system architecture.
-* Planned the complete ML/NLP pipeline.
+* Planned the end-to-end NLP and ML pipeline.
 * Developed the NLP preprocessing workflow.
 * Implemented TF-IDF feature extraction.
 * Worked on Logistic Regression.
 * Worked on mathematical optimization.
-* Implemented/assisted with regularization.
+* Applied regularization techniques.
 * Contributed to model evaluation.
-* Integrated the ML pipeline with the frontend.
-* Worked on Gemini AI integration.
-* Coordinated team development.
+* Worked on frontend/backend integration.
+* Integrated Gemini AI for threat explanations.
+* Coordinated project development.
 
 ## Sreesha — M2
 
-* Contributed to project development and implementation.
-* Assisted with data preparation and experimentation.
-* Contributed to testing and evaluation.
-* Assisted with documentation and project validation.
+* Contributed to data preparation and experimentation.
+* Assisted with model testing and evaluation.
+* Contributed to system development.
+* Assisted with documentation and validation.
 
 ## Jayanth — M3
 
-* Contributed to system development.
+* Contributed to system implementation.
 * Assisted with testing and validation.
-* Contributed to frontend/backend integration.
+* Contributed to application integration.
 * Assisted with documentation and project presentation.
-
-> Update individual responsibilities to reflect the actual work performed by each team member.
 
 ---
 
@@ -1355,27 +773,27 @@ This project demonstrates practical knowledge of:
 * Accuracy
 * Precision
 * Recall
-* F1-score
+* F1-Score
 * Confusion Matrix
 * ROC-AUC
 
 ### Software Development
 
-* Python backend
-* React frontend
+* Python
+* React
 * TypeScript
 * API integration
 * Environment configuration
 
 ### Generative AI
 
-* Gemini API integration
+* Gemini API
 * AI-assisted explanations
-* Explainable security analysis
+* Explainable threat analysis
 
 ---
 
-# 📌 Project Highlights
+# 🌟 Project Highlights
 
 ```text
 ✔ NLP-based email processing
@@ -1389,86 +807,62 @@ This project demonstrates practical knowledge of:
 ✔ Probability-based risk scoring
 ✔ Gemini AI explanations
 ✔ React + TypeScript dashboard
-✔ Model evaluation and visualization
+✔ Model evaluation
 ```
 
 ---
 
 # 🏆 Project Impact
 
-The project demonstrates how traditional machine learning can be combined with modern generative AI to create an **explainable cybersecurity application**.
+The project demonstrates how **Machine Learning and Generative AI can work together** to create a more explainable cybersecurity application.
 
-Instead of simply displaying:
+Instead of simply showing:
 
 ```text
-"PHISHING"
+PHISHING
 ```
 
 the system aims to provide:
 
 ```text
 PHISHING
-   ↓
+    ↓
 Risk Score
-   ↓
+    ↓
 Threat Indicators
-   ↓
-Plain-English Explanation
+    ↓
+AI Explanation
 ```
 
-This makes the system more useful for users who may not have technical cybersecurity knowledge.
-
----
-
-# 🔮 Future Vision
-
-The long-term goal is to evolve the project into a more comprehensive email-security platform capable of:
-
-```text
-Real-Time Email Monitoring
-          ↓
-Advanced Threat Detection
-          ↓
-URL & Attachment Analysis
-          ↓
-Sender Reputation
-          ↓
-Machine Learning
-          ↓
-Threat Intelligence
-          ↓
-Explainable AI
-          ↓
-Automated Security Response
-```
+This helps users understand the reasoning behind a security warning rather than receiving only a classification label.
 
 ---
 
 # 📄 License
 
-This project is intended for educational and research purposes.
+This project is intended primarily for educational and research purposes.
 
-If the project is released as open source, an appropriate license such as MIT can be added.
+An appropriate open-source license can be added to the repository if the project is distributed publicly.
 
 ---
 
 # ⚠️ Disclaimer
 
-This project is developed primarily for **educational, academic, research, and demonstration purposes**.
+This project is developed for **educational, academic, research, and demonstration purposes**.
 
-The reported model performance should not be interpreted as guaranteed real-world phishing detection performance.
+The reported model performance should not be interpreted as guaranteed real-world phishing-detection performance.
 
-A production-grade security solution would require:
+A production-grade email-security solution would require:
 
-* Large-scale testing
+* Large-scale evaluation
 * Adversarial testing
 * Threat-intelligence integration
 * Continuous model monitoring
 * Security audits
 * Privacy controls
-* Robust authentication
+* Secure deployment
 * Continuous retraining
-* Extensive real-world validation
+* Real-world validation
 
 ---
 
@@ -1482,4 +876,4 @@ If you find this project useful or interesting, consider giving the repository a
 
 **NLP + Machine Learning + Mathematical Optimization + Generative AI**
 
-> Building smarter, faster, and more explainable email security through intelligent automation.
+> Building smarter and more explainable email security through intelligent automation.
